@@ -1,0 +1,508 @@
+$mainColor: #ff3801;
+$linesColor: #ebedee;
+$textColor: #333333;
+
+/* tablet 1000px */
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100px;
+      height: 1px;
+      background-color: $linesColor;
+      z-index: 1001;
+    }
+  }
+
+  body.lock {
+    overflow: hidden;
+  }
+
+  .view {
+    .header {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 40px 60px;
+      grid-template-areas:
+        "nav nav nav nav nav nav nav nav connect connect connect connect connect connect connect connect connect"
+        "contentNav searchField . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+
+      margin: 0;
+      max-width: 100%;
+      z-index: 1000;
+      background: #fff !important;
+
+      &__nav {
+        padding: 0 0 0 18px;
+
+        &-item:last-child {
+          display: none;
+        }
+      }
+
+      &__connect {
+        display: flex;
+        justify-self: end;
+
+        &-contact {
+          font-size: 16px;
+          line-height: 40px;
+        }
+
+        &-btn {
+          width: 180px;
+          height: 40px;
+          line-height: 40px;
+          margin: 0;
+          font-size: 16px;
+          border-radius: 0;
+        }
+      }
+
+      &__content-nav {
+        border: none;
+        width: 60px;
+
+        &-list {
+          position: fixed;
+          background: #fff;
+          padding: 110px 25px 15px 25px;
+          display: block;
+          left: -100%;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          text-align: center;
+          transition: all 0.5s ease 0s;
+          overflow: auto;
+        }
+
+        /* Burger menu */
+
+        .burger {
+          display: flex;
+          height: 100%;
+          width: 100%;
+          border-right: 1px solid $linesColor;
+          justify-content: center;
+          align-items: center;
+
+          &::before {
+            content: url("../../images/burger/burgMenu.svg");
+          }
+
+          &.active::before {
+            content: url("../../images/burger/burgCross.svg");
+          }
+        }
+
+        &-list.active {
+          left: 0;
+        }
+
+        &-item {
+          display: block;
+          border-radius: 5px;
+          border: 3px solid $mainColor;
+          margin-top: 5px;
+          background: #fbab95;
+          box-shadow: 0 0 15px #fbab95;
+          line-height: 35px;
+        }
+      }
+
+      &__search-field {
+        justify-self: start;
+        width: 60px;
+        height: 60px;
+        border-right: 1px solid $linesColor;
+
+        &::before {
+          content: url("../../images/magnifying-glass-orange.png");
+          top: 18.5px;
+          left: 19.5px;
+        }
+
+        &-inner {
+          display: none;
+        }
+      }
+
+      &__logo {
+        width: 171px;
+      }
+
+      &__personality {
+        line-height: 0px;
+
+        .personality__log-in {
+          font-size: 0;
+          width: 60px;
+          height: 60px;
+          padding-left: 0;
+          order: 2;
+
+          &:before {
+            transform: scale(1.4);
+            top: 22.5px;
+            left: 21.5px;
+          }
+        }
+
+        .personality__favorites {
+          font-size: 0;
+          width: 60px;
+          height: 60px;
+          padding-left: 0;
+          order: 1;
+
+          &:before {
+            transform: scale(1.4);
+            top: 22.5px;
+            left: 21.5px;
+          }
+        }
+
+        .personality__basket {
+          font-size: 0;
+          width: 60px;
+          height: 60px;
+          background-color: #fff;
+          border-left: 1px solid $linesColor;
+          border-top: 1px solid $linesColor;
+          order: 3;
+
+          &:before {
+            content: url("../../images/basket-orange.png");
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .title {
+      &__wrap {
+        margin: 45px 19px 0 0;
+      }
+    }
+
+    .slider {
+      .path {
+        display: none;
+      }
+
+      &__wrapper {
+        .slider-small {
+          .slick-list {
+            margin: 0 0 2px 0;
+          }
+        }
+
+        .slider-big {
+          max-width: 400px;
+          margin: 35px 20px 0 20px;
+        }
+      }
+    }
+
+    .about {
+      margin: 20px 19px 0 0;
+
+      grid-template-rows: 66px 98px 1fr;
+      grid-template-areas:
+        "top top top top socials socials ."
+        "order order order order advantages advantages advantages"
+        "info info info info info info info";
+
+      &__recalls {
+        margin: 3px 3px 0 20%;
+      }
+
+      &__socials {
+        margin: 10px 5px 0 0;
+      }
+
+      &__sizes {
+        display: none;
+        grid-area: unset;
+      }
+
+      &__order {
+        margin: 6px 0 33px 0;
+      }
+
+      &__advantages {
+        margin: 5px 0 0 19%;
+      }
+
+      &__info {
+        margin: 5px 0 0 0;
+      }
+    }
+  }
+}
+
+/* tablet 900px */
+
+@media (max-width: 900px) {
+  .container {
+    &::before {
+      position: fixed;
+    }
+
+    &::after {
+      position: fixed;
+    }
+  }
+
+  .view {
+    .header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      grid-template-areas:
+        "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect"
+        "contentNav searchField . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+
+      &__nav {
+        grid-area: unset;
+
+        &-item {
+          display: none;
+        }
+      }
+
+      &__connect {
+        justify-self: stretch;
+        justify-content: space-between;
+
+        &-contacts {
+          margin: 0 0 0 18px;
+        }
+      }
+    }
+
+    .title {
+      margin: 100px 0 0 0;
+    }
+
+    .slider {
+      margin: 100px 0 0 0;
+    }
+
+    .about {
+      grid-template-areas:
+        "top top top top top socials socials"
+        "order order order order advantages advantages advantages"
+        "info info info info info info info";
+
+      &__recalls {
+        margin: 3px 19px 0 20%;
+      }
+
+      &__advantages {
+        margin: 5px 0 0 10%;
+      }
+    }
+  }
+}
+
+/* tablet 768px */
+
+@media (max-width: 768px) {
+  .view {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "first"
+      "second"
+      "third"
+      "fourth";
+
+    .header {
+      grid-template-areas:
+        "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect"
+        "contentNav contentNav . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+
+      &__connect {
+        &-btn {
+          width: 160px;
+        }
+      }
+
+      &__search-field {
+        grid-area: unset;
+        display: none;
+      }
+
+      &__personality {
+        .personality__log-in {
+          grid-area: unset;
+          display: none;
+        }
+
+        .personality__favorites {
+          grid-area: unset;
+          display: none;
+        }
+      }
+    }
+
+    .title {
+      &__wrap {
+        margin: 28px 19px 0 18px;
+        max-width: 100%;
+      }
+    }
+
+    .slider {
+      margin: 0;
+
+      &__wrapper {
+        .slider-big {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .about {
+      margin: 0 19px;
+
+      grid-template-columns: 52% 48%;
+      grid-template-rows: 56px 97px 1fr 101px;
+      grid-template-areas:
+        "top top"
+        "order order"
+        "info info"
+        "advantages socials";
+
+      &__top {
+        margin: 0;
+        align-self: end;
+      }
+
+      &__recalls {
+        margin: 0;
+      }
+
+      &__order {
+        &-buy {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        &-info {
+          margin: 21px 0 0 0;
+          order: 2;
+        }
+
+        &-btn {
+          order: 1;
+          width: 100%;
+          font-size: 12px;
+          letter-spacing: 0.6px;
+
+          &::after {
+            position: absolute;
+            right: 0;
+            bottom: -34px;
+          }
+        }
+      }
+
+      &__info {
+        &-rolling-up {
+          margin: 15px 0 27px 0;
+        }
+      }
+
+      &__advantages {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* mobile phone 425px */
+
+@media (max-width: 426px) {
+  /* 425.6????? */
+  .container {
+    &::after {
+      top: 30px;
+    }
+    &::before {
+      top: 80px;
+    }
+  }
+  .view {
+    .header {
+      grid-template-rows: 30px 50px;
+      grid-template-areas:
+        "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect"
+        "contentNav contentNav . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+
+      &__connect {
+        &-contacts {
+          margin: 0 0 0 13px;
+        }
+
+        &-contact {
+          font-size: 14px;
+          line-height: 30px;
+        }
+
+        &-btn {
+          width: 80px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+        }
+        .rus {
+          display: none;
+        }
+
+        .eng {
+          display: block;
+        }
+      }
+
+      &__logo {
+        width: 142px;
+      }
+
+      &__personality {
+        .personality__basket {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      &__content-nav {
+        width: 50px;
+      }
+    }
+
+    .title {
+      margin: 80px 0 0 0;
+    }
+
+    .slider {
+      &-small {
+        display: none;
+      }
+
+      &-big {
+        margin: 14px 20px;
+      }
+    }
+  }
+}
