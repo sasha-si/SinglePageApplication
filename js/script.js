@@ -21,10 +21,18 @@ $(document).ready(function () {
 
    $('.slider-big__item').zoom();
 
-   $('.burger').click(function (event) {
-      $('.burger, .header__content-nav-list').toggleClass('active');
-      $('body').toggleClass('lock');
-   });
+   window.onload = () => {
+      const width = $('body').innerWidth();
+      console.log(width);
+      if (width <= 1000) {
+         $('.slider-big__item').trigger('zoom.destroy');
+      }
+   };
+
+$('.burger').click(function (event) {
+   $('.burger, .header__content-nav-list').toggleClass('active');
+   $('body').toggleClass('lock');
+});
 });
 
 const hideText = document.querySelector('.about__info-rolling-up');
