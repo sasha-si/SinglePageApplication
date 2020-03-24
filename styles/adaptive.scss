@@ -393,6 +393,17 @@ $textColor: #333333;
         margin: 0;
       }
 
+      &__socials {
+        margin: 1px 1px 0 0;
+      }
+
+      .facebook-ref,
+      .vk-ref,
+      .google-ref {
+        width: 30px;
+        height: 30px;
+      }
+
       &__order {
         &-buy {
           display: flex;
@@ -402,6 +413,17 @@ $textColor: #333333;
         &-info {
           margin: 21px 0 0 0;
           order: 2;
+          font-size: 12px;
+        }
+
+        &-like {
+          order: 3;
+          width: 100%;
+
+          &::after {
+            right: 3px;
+            top: -17px;
+          }
         }
 
         &-btn {
@@ -409,23 +431,24 @@ $textColor: #333333;
           width: 100%;
           font-size: 12px;
           letter-spacing: 0.6px;
-
-          &::after {
-            position: absolute;
-            right: 0;
-            bottom: -34px;
-          }
         }
       }
 
       &__info {
+        &-title {
+          margin: 0 0 24px 0;
+        }
         &-rolling-up {
-          margin: 15px 0 27px 0;
+          margin: 24px 0 27px 0;
         }
       }
 
       &__advantages {
         margin: 0;
+
+        &-item {
+          margin: 0 0 7px 0;
+        }
       }
     }
   }
