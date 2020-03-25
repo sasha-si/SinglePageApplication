@@ -1,6 +1,8 @@
+/* Main styles start */
 body {
   font-family: "Lato";
   color: #333333;
+  min-width: 320px;
 }
 
 body a {
@@ -583,6 +585,7 @@ body a {
 
 .view .about__order-buy {
   width: 100%;
+  position: relative;
 }
 
 .view .about__order-info {
@@ -600,17 +603,12 @@ body a {
 }
 
 .view .about__order-like {
-  position: relative;
-}
-
-.view .about__order-like::after {
-  content: url("../images/heart.svg");
-  width: 17px;
-  height: 17px;
   position: absolute;
-  right: -46px;
-  top: -10px;
-  cursor: pointer;
+  width: 17px;
+  height: 16px;
+  background: url("../images/heart.svg") no-repeat;
+  top: 37px;
+  left: 191px;
 }
 
 .view .about__order-btn {
@@ -689,7 +687,8 @@ body a {
   font-size: 13px;
 }
 
-/* tablet 1000px */
+/* Main styles finished */
+/* tablet 1000px  */
 @media (max-width: 1000px) {
   .container {
     padding: 0;
@@ -712,7 +711,7 @@ body a {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 40px 60px;
         grid-template-rows: 40px 60px;
-        grid-template-areas: "nav nav nav nav nav nav nav nav connect connect connect connect connect connect connect connect connect" "contentNav searchField . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+        grid-template-areas: "nav nav nav nav nav nav nav nav connect connect connect connect connect connect connect connect connect" "contentNav searchField . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
     margin: 0;
     max-width: 100%;
     z-index: 1000;
@@ -777,10 +776,10 @@ body a {
             align-items: center;
   }
   .view .header__content-nav .burger::before {
-    content: url("../../images/burger/burgMenu.svg");
+    content: url("../images/burger/burgMenu.svg");
   }
   .view .header__content-nav .burger.active::before {
-    content: url("../../images/burger/burgCross.svg");
+    content: url("../images/burger/burgCross.svg");
   }
   .view .header__content-nav-list.active {
     left: 0;
@@ -803,7 +802,7 @@ body a {
     border-right: 1px solid #ebedee;
   }
   .view .header__search-field::before {
-    content: url("../../images/magnifying-glass-orange.png");
+    content: url("../images/magnifying-glass-orange.png");
     top: 18.5px;
     left: 19.5px;
   }
@@ -858,7 +857,7 @@ body a {
             order: 3;
   }
   .view .header__personality .personality__basket:before {
-    content: url("../../images/basket-orange.png");
+    content: url("../images/basket-orange.png");
     margin: 0;
   }
   .view .title__wrap {
@@ -878,7 +877,7 @@ body a {
     margin: 20px 19px 0 0;
     -ms-grid-rows: 66px 98px 1fr;
         grid-template-rows: 66px 98px 1fr;
-        grid-template-areas: "top top top top socials socials ." "order order order order advantages advantages advantages" "info info info info info info info";
+        grid-template-areas: "top top top top socials socials ." "order order order order advantages advantages advantages" "info info info info info info info";
   }
   .view .about__recalls {
     margin: 3px 3px 0 20%;
@@ -915,7 +914,7 @@ body a {
     top: 0;
     left: 0;
     z-index: 1000;
-        grid-template-areas: "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect" "contentNav searchField . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+        grid-template-areas: "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect" "contentNav searchField . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
   }
   .view .header__nav {
     grid-area: unset;
@@ -940,7 +939,7 @@ body a {
     margin: 100px 0 0 0;
   }
   .view .about {
-        grid-template-areas: "top top top top top socials socials" "order order order order advantages advantages advantages" "info info info info info info info";
+        grid-template-areas: "top top top top top socials socials" "order order order order advantages advantages advantages" "info info info info info info info";
   }
   .view .about__recalls {
     margin: 3px 19px 0 20%;
@@ -955,10 +954,10 @@ body a {
   .view {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-        grid-template-areas: "first" "second" "third" "fourth";
+        grid-template-areas: "first" "second" "third" "fourth";
   }
   .view .header {
-        grid-template-areas: "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect" "contentNav contentNav . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+        grid-template-areas: "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect" "contentNav contentNav . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
   }
   .view .header__connect-btn {
     width: 160px;
@@ -991,13 +990,16 @@ body a {
         grid-template-columns: 52% 48%;
     -ms-grid-rows: 56px 97px 1fr 101px;
         grid-template-rows: 56px 97px 1fr 101px;
-        grid-template-areas: "top top" "order order" "info info" "advantages socials";
+        grid-template-areas: "top top" "order order" "info info" "advantages socials";
   }
   .view .about__top {
     margin: 0;
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
+  }
+  .view .about__top-pricelow {
+    font-size: 22px;
   }
   .view .about__recalls {
     margin: 0;
@@ -1015,8 +1017,10 @@ body a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .view .about__order-info {
     margin: 21px 0 0 0;
@@ -1029,11 +1033,9 @@ body a {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
-    width: 100%;
-  }
-  .view .about__order-like::after {
-    right: 3px;
-    top: -17px;
+    top: 56px;
+    left: auto;
+    right: 2px;
   }
   .view .about__order-btn {
     -webkit-box-ordinal-group: 2;
@@ -1042,6 +1044,7 @@ body a {
     width: 100%;
     font-size: 12px;
     letter-spacing: 0.6px;
+    line-height: 40px;
   }
   .view .about__info-title {
     margin: 0 0 24px 0;
@@ -1069,7 +1072,7 @@ body a {
   .view .header {
     -ms-grid-rows: 30px 50px;
         grid-template-rows: 30px 50px;
-        grid-template-areas: "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect" "contentNav contentNav . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
+        grid-template-areas: "connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect connect" "contentNav contentNav . logo logo logo logo logo logo logo logo logo logo logo personality personality personality";
   }
   .view .header__connect-contacts {
     margin: 0 0 0 13px;
@@ -1110,4 +1113,4 @@ body a {
     margin: 14px 20px;
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
