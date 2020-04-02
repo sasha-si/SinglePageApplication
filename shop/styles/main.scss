@@ -3,9 +3,8 @@ $linesColor: #ebedee;
 $textColor: #333333;
 
 /* Main styles start */
-
 body {
-  font-family: "Lato";
+  font-family: Lato, sans-serif;
   color: $textColor;
   min-width: 320px;
 
@@ -30,6 +29,30 @@ body {
     z-index: 1001;
   }
 }
+
+/* Modal window for callback start */
+#modal {
+  display: none;
+  width: 300px;
+  cursor: auto;
+
+  & input {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+    height: 38px;
+    border: 1px solid #e6e6e6;
+    padding: 0px 10px;
+  }
+
+  & input[type="submit"] {
+    background-color: $mainColor;
+    border: none;
+    cursor: pointer;
+  }
+}
+/* Modal window for callback end */
 
 .view {
   display: grid;
@@ -94,6 +117,11 @@ body {
           top: 3px;
           left: 20px;
         }
+        
+        &:hover {
+          color: $mainColor;
+          transition: color 0.2s linear;
+        }
       }
 
       .personality__favorites {
@@ -110,6 +138,11 @@ body {
           position: absolute;
           top: 3px;
           left: 20px;
+        }
+
+        &:hover {
+          color: $mainColor;
+          transition: color 0.2s linear;
         }
       }
 
@@ -133,6 +166,16 @@ body {
           color: #ebe26a;
           margin: 0 0 0 5px;
         }
+        
+        &:hover {
+          background: #e63301;
+          transition: background-color 0.2s linear;
+        }
+
+        &:active {
+          background: #ff5f32;
+        }
+
       }
     }
 
@@ -248,7 +291,7 @@ body {
 
   .title {
     grid-area: second;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     align-self: end;
     min-height: 0;
 
@@ -273,7 +316,7 @@ body {
     grid-area: third;
 
     .path {
-      font-family: "Open Sans";
+      font-family: "Open Sans", sans-serif;
       font-size: 13px;
     }
 
@@ -373,7 +416,7 @@ body {
 
   .about {
     grid-area: fourth;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     margin: 20px 0 0 0;
     min-height: 415px;
 
@@ -475,7 +518,7 @@ body {
       }
 
       &-item {
-        font-family: "Gotham";
+        font-family: "Gotham", sans-serif;
         width: 40px;
         height: 40px;
         border: 1px solid #ccc;
@@ -487,6 +530,7 @@ body {
 
         &.active {
           border: 2px solid $mainColor;
+          transition: border 0.2s linear;
         }
       }
     }
@@ -532,7 +576,7 @@ body {
         text-transform: uppercase;
         font-size: 14px;
         letter-spacing: 1.4px;
-        font-family: "Lato";
+        font-family: "Lato", sans-serif;
 
         &:hover {
           background: #e63301;
@@ -597,9 +641,9 @@ body {
 
 /* Main styles finished */
 
-/* tablet 1000px  */
+/* tablet 1024px  */
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .container {
     padding: 0;
 
@@ -985,7 +1029,7 @@ body {
 
         &-pricelow {
           font-size: 22px;
-        }  
+        }
       }
 
       &__recalls {
@@ -1053,8 +1097,8 @@ body {
 
 /* mobile phone 425px */
 
+/* 425.6????? */
 @media (max-width: 426px) {
-  /* 425.6????? */
   .container {
     &::after {
       top: 30px;
